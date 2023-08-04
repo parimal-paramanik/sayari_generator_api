@@ -11,8 +11,10 @@ const {connection}= require("./configs/db")
 const {userRouter}= require("./Routes/promptRouter")
 
 
-
-app.use("/",userRouter)
+app.get("/",(req,res)=>{
+    res.send("everything is fine")
+})
+app.use("/sayari",userRouter)
 
 app.listen(port,async(req,res)=>{
     try {
